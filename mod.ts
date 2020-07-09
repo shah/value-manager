@@ -1,6 +1,6 @@
-import { Context } from "https://cdn.jsdelivr.net/gh/shah/context-manager/mod.ts";
-import * as inflect from "https://cdn.jsdelivr.net/gh/shah/text-inflect/mod.ts";
-export { snakeCaseValue as name } from "https://cdn.jsdelivr.net/gh/shah/text-inflect/mod.ts";
+import { Context } from "https://cdn.jsdelivr.net/gh/shah/context-manager@v1.0.1/mod.ts";
+import * as inflect from "https://cdn.jsdelivr.net/gh/shah/text-inflect@v1.0.0/mod.ts";
+export { snakeCaseValue as name } from "https://cdn.jsdelivr.net/gh/shah/text-inflect@v1.0.0/mod.ts";
 
 export interface FutureInterpolatableValue {
   readonly isFutureInterpolatableValue: true;

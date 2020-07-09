@@ -2,7 +2,7 @@ import {
   Context,
   ctxFactory,
   isProjectContext,
-} from "https://cdn.jsdelivr.net/gh/shah/context-manager/mod.ts";
+} from "https://cdn.jsdelivr.net/gh/shah/context-manager@v1.0.1/mod.ts";
 import {
   assert,
   assertEquals,
