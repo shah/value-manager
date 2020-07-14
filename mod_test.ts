@@ -2,11 +2,11 @@ import {
   Context,
   ctxFactory,
   isProjectContext,
-} from "https://cdn.jsdelivr.net/gh/shah/context-manager@v1.0.1/mod.ts";
+} from "https://cdn.jsdelivr.net/gh/shah/context-manager@v1.0.2/mod.ts";
 import {
   assert,
   assertEquals,
-} from "https://deno.land/std@v0.60.0/testing/asserts.ts";
+} from "https://deno.land/std@v0.61.0/testing/asserts.ts";
 import * as v from "./mod.ts";
 
 const testCtx = ctxFactory.projectContext(".");
