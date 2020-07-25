@@ -1,6 +1,6 @@
-import { Context } from "https://denopkg.com/shah/context-manager@v1.0.4/mod.ts";
-import * as inflect from "https://denopkg.com/shah/text-inflect@v1.0.3/mod.ts";
-export { snakeCaseValue as name } from "https://denopkg.com/shah/text-inflect@v1.0.3/mod.ts";
+import { Context } from "https://denopkg.com/shah/context-manager@v1.0.5/mod.ts";
+import * as inflect from "https://denopkg.com/shah/text-inflect@v1.0.4/mod.ts";
+export { snakeCaseValue as name } from "https://denopkg.com/shah/text-inflect@v1.0.4/mod.ts";
 
 export interface FutureInterpolatableValue {
   readonly isFutureInterpolatableValue: true;
