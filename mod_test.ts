@@ -6,7 +6,7 @@ import {
 import {
   assert,
   assertEquals,
-} from "https://deno.land/std@v0.61.0/testing/asserts.ts";
+} from "https://deno.land/std@v0.62.0/testing/asserts.ts";
 import * as v from "./mod.ts";
 
 const testCtx = ctxFactory.projectContext(".");
