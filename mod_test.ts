@@ -6,7 +6,7 @@ import {
 import {
   assert,
   assertEquals,
-} from "https://deno.land/std@v0.62.0/testing/asserts.ts";
+} from "https://deno.land/std@0.69.0/testing/asserts.ts";
 import * as v from "./mod.ts";
 
 const testCtx = ctxFactory.projectContext(".");
@@ -14,7 +14,10 @@ const testCtx = ctxFactory.projectContext(".");
 Deno.test("Literal and Dynamic Value (variadic)", () => {
   const strValue: string = "textValue";
   const numValue: number = 4;
-  const dynValue: v.Value = (ctx: Context, ...extraArgs: any): any => {
+  const dynValue: v.Value = (
+    ctx: Context,
+    ...extraArgs: unknown[]
+  ): unknown => {
     assert(isProjectContext(ctx));
     return "value of test model text property(dynamic)" + extraArgs;
   };
@@ -32,7 +35,10 @@ Deno.test("Literal and Dynamic Value (variadic)", () => {
 
 Deno.test("Literal and Dynamic TextValue", () => {
   const strValue: v.TextValue = "textValue";
-  const dynValue: v.TextValue = (ctx: Context, ...extraArgs: any): string => {
+  const dynValue: v.TextValue = (
+    ctx: Context,
+    ...extraArgs: unknown[]
+  ): string => {
     assert(isProjectContext(ctx));
     return "value of test model text property(dynamic)" + extraArgs;
   };
@@ -49,9 +55,12 @@ Deno.test("Literal and Dynamic TextValue", () => {
 
 Deno.test("Literal and Dynamic NumericValue", () => {
   const numValue: number = 4;
-  const dynValue: v.NumericValue = (ctx: Context, extraArg: number): number => {
+  const dynValue: v.NumericValue = (
+    ctx: Context,
+    extraArg: unknown,
+  ): number => {
     assert(isProjectContext(ctx));
-    return 5015 + 4 + extraArg;
+    return 5015 + 4 + (extraArg as number);
   };
 
   assert(!v.isDynamicValue(numValue));
