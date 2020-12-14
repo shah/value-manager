@@ -1,5 +1,6 @@
-import type { Context } from "https://denopkg.com/shah/context-manager@v1.0.6/mod.ts";
+import type { Context } from "https://denopkg.com/shah/context-manager@v1.0.7/mod.ts";
 import type * as inflect from "https://denopkg.com/shah/text-inflect@v1.0.5/mod.ts";
+import * as safety from "https://denopkg.com/shah/ts-safety@v0.3.1/mod.ts";
 export { snakeCaseValue as name } from "https://denopkg.com/shah/text-inflect@v1.0.5/mod.ts";
 
 export interface FutureInterpolatableValue {
@@ -8,11 +9,9 @@ export interface FutureInterpolatableValue {
   prepare(ctx: Context, ...args: unknown[]): string;
 }
 
-export function isFutureInterpolatableValue(
-  v: unknown,
-): v is FutureInterpolatableValue {
-  return (v && typeof v === "object" && "isFutureInterpolatableValue" in v);
-}
+export const isFutureInterpolatableValue = safety.typeGuard<
+  FutureInterpolatableValue
+>("isFutureInterpolatableValue");
 
 export interface DynamicValue {
   (ctx: Context, ...args: unknown[]): unknown;
@@ -84,5 +83,8 @@ export function resolveNumericValueAsText(
 }
 
 export function isDynamicNumericValue(v: unknown): v is DynamicNumericValue {
-  return (v && typeof v === "function");
+  if (v) {
+    return typeof v === "function";
+  }
+  return false;
 }

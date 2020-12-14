@@ -2,7 +2,7 @@ import {
   Context,
   ctxFactory,
   isProjectContext,
-} from "https://denopkg.com/shah/context-manager@v1.0.6/mod.ts";
+} from "https://denopkg.com/shah/context-manager@v1.0.7/mod.ts";
 import {
   assert,
   assertEquals,
@@ -12,8 +12,8 @@ import * as v from "./mod.ts";
 const testCtx = ctxFactory.projectContext(".");
 
 Deno.test("Literal and Dynamic Value (variadic)", () => {
-  const strValue: string = "textValue";
-  const numValue: number = 4;
+  const strValue = "textValue";
+  const numValue = 4;
   const dynValue: v.Value = (
     ctx: Context,
     ...extraArgs: unknown[]
@@ -54,7 +54,7 @@ Deno.test("Literal and Dynamic TextValue", () => {
 });
 
 Deno.test("Literal and Dynamic NumericValue", () => {
-  const numValue: number = 4;
+  const numValue = 4;
   const dynValue: v.NumericValue = (
     ctx: Context,
     extraArg: unknown,
